@@ -22,7 +22,7 @@ export function Home(){
         <h2>Home</h2>
         <div style={{display:'flex',flexWrap:"wrap",}}>
         {allData.map((e)=>(
-            <Card props={e}/>
+            <Card key={e.id} props={e}/>
         ))}
         {/* <Card /> */}
         </div>
