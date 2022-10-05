@@ -38,7 +38,7 @@ function App() {
 
     <BrowserRouter>
       <div className="App">
-        {myState3 ? <h2>true</h2> : <h2>false</h2>}
+        {/* {myState3 ? <h2>true</h2> : <h2>false</h2>} */}
         {/* <h1>{useSelector((bag)=>{return bag.token})}</h1> */}
 
         <Navbar/>
