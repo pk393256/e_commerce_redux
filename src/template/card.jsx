@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function Card(props) {
+export function Card({props}) {
 
 
     const navigate = useNavigate();
+    //  props = {props}
     let data = props
+    // console.log(data)
 //   let data = {
 //     "id": 1,
 //     brand: "Roadster",
@@ -16,15 +18,15 @@ export function Card(props) {
 //     price: 844
 //   };
   function details(x){
-      navigate('/:x')
+      navigate(`/${x}`)
   }
 
   return (
     <>
      
-        <div style={{ border: "5px solid blue" }}>
+        <div style={{ border: "5px solid blue",width:"30%",marginLeft:'2%',marginBottom:'2%',paddingBottom:"5px" }}>
           <h1>{data.title}</h1>
-          <img src={data.image} />
+          <img style={{width:'20%'}} src={data.image} />
           <br />
           <button id={data.id} onClick={(e)=>details(e.target.id)}>More Details</button>
         </div>

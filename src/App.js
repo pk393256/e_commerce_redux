@@ -9,6 +9,9 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import { getState, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { Cart } from './components/cart';
+import { SingleProduct } from './components/singleProduct';
+
 
 function App() {
   const [myState3,setMyState3] = useState(false);
@@ -44,6 +47,8 @@ function App() {
             <>
 
               <Route path='/home' element={<Home/>} />
+              <Route path='/cart' element={<Cart />} />
+              <Route path='/:id' element={<SingleProduct />} />
             </>
             :
             <>
