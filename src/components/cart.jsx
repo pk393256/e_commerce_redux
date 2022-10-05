@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 export function Cart() {
     const [allData, setAllData] = useState([]);
     const [singleData,setSingleData] = useState({})
-
+    const navigate = useNavigate();
     const [count, setCount] = useState(0);
     async function fetchAllCartData() {
         let res = await fetch('http://localhost:8080/cart')
@@ -78,6 +78,21 @@ export function Cart() {
             setCount(count+1)
         }
     }
+    async function placeOrder(){
+
+        // await fetch(`http://localhost:8080/cart`,{
+        //     method:"PATCH",
+        //     headers:{
+        //         'Content-Type':'application/json'
+        //     },
+        //     body:JSON.stringify({cart:[]})
+        // })
+        // setCount(count+1)
+        alert('oreder placed')
+        navigate('/home')
+
+    }
+
 
     useEffect(() => {
         fetchAllCartData()
@@ -122,6 +137,12 @@ export function Cart() {
                     ))}
                 </tbody>
             </table>
+
+                        <br/>
+                        <br/>
+                        <button onClick={placeOrder}>Place Order</button>
+
+
 
 
         </>
